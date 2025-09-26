@@ -1,0 +1,16 @@
+# 🐉 Fantasy Creature Zoo
+
+A full-stack app to manage and explore magical creatures and their habitats.
+
+## 🧰 Stack
+- PostgreSQL
+- Node.js + Express + Sequelize
+- React + Axios
+
+## 🚀 How to Run
+
+### 1️⃣ Setup database
+```sql
+CREATE DATABASE fantasy_zoo;
+CREATE USER zoo_user WITH PASSWORD 'zoo_pass';
+GRANT ALL PRIVILEGES ON DATABASE fantasy_zoo TO zoo_user;
