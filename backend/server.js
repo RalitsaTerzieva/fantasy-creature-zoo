@@ -6,3 +6,9 @@ import creatureRoutes from "./routes/creatureRoutes";
 import habitatRoutes from "./routes/habitatRoutes";
 
 dotenv.config();
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+
