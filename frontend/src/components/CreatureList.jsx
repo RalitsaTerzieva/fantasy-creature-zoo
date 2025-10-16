@@ -6,7 +6,10 @@ export default function CreatureList() {
   const [creatures, setCreatures] = useState([]);
 
   useEffect(() => {
-    api.get("/creatures").then(res => setCreatures(res.data));
+    api
+      .get("/creatures")
+      .then(res => setCreatures(res.data))
+      .catch(err => console.error("Failed to fetch creatures:", err));
   }, []);
 
   return (
@@ -15,7 +18,7 @@ export default function CreatureList() {
       <ul className="creature-list">
         {creatures.map(c => (
           <li key={c.id}>
-            {c.name} — {c.type} ({c.Habitat?.name})
+            {c.name} — {c.type} (Age: {c.age}, Power: {c.magical_power})
           </li>
         ))}
       </ul>
