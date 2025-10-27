@@ -1,5 +1,6 @@
 import { useState } from "react";
-import api from "../services/api"; // your axios instance
+import api from "../services/api";
+import "./CreatureForm.css"; 
 
 export default function CreatureForm({ onAdded }) {
   const [name, setName] = useState("");
