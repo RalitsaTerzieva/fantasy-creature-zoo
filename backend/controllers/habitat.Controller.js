@@ -6,6 +6,11 @@ export const getHabitats = async (req, res) => {
 };
 
 export const addHabitat = async (req, res) => {
-  const habitat = await Habitat.create(req.body);
-  res.status(201).json(habitat);
+  try {
+    const habitat = await Habitat.create(req.body);
+    res.status(201).json(habitat);
+  } catch (err) {
+    console.error("Failed to add habitat:", err);
+    res.status(500).json({ error: "Failed to create habitat" });
+  }
 };
