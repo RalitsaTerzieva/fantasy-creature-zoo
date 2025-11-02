@@ -1,0 +1,20 @@
+.creature-profile {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 40px auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fdf6e3;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.creature-profile h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.creature-profile p {
+  font-size: 1.1rem;
+  margin: 6px 0;
+}
