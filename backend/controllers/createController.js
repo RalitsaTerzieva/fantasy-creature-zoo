@@ -14,3 +14,17 @@ export const addCreature = async (req, res) => {
     res.status(500).json({ error: "Failed to create creature" });
   }
 };
+
+export const getCreatureById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const creature = await Creature.findByPk(id, { include: Habitat });
+    if (!creature) {
+      return res.status(404).json({ error: "Creature not found" });
+    }
+    res.json(creature);
+  } catch (err) {
+    console.error("Failed to fetch creature:", err);
+    res.status(500).json({ error: "Failed to fetch creature" });
+  }
+};
