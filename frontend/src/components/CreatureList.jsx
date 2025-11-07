@@ -27,6 +27,7 @@ export default function CreatureList() {
         {creatures.map(c => (
           <li key={c.id}>
             {c.name} — {c.type} (Age: {c.age}, Power: {c.magical_power})
+            {c.name} — {c.type} ({c.Habitat?.name || "No habitat"})
           </li>
         ))}
       </ul>
