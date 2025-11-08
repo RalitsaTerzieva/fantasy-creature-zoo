@@ -1,4 +1,6 @@
 import CreatureList from "./components/CreatureList";
+import CreatureProfile from "./components/CreatureProfile";
+import { Navigate } from "react-router-dom";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -11,6 +13,7 @@ function App() {
           <Route path="/" element={<CreatureList />} />
 
           <Route path="/creature/:id" element={<CreatureProfile />} />
+          <Route path="/creatures" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </Router>
