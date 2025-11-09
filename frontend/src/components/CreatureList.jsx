@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import CreatureForm from "./CreatureForm";
+import { Link } from "react-router-dom";
 import "./CreatureList.css";
 
 export default function CreatureList() {
@@ -27,7 +28,9 @@ export default function CreatureList() {
         {creatures.map(c => (
           <li key={c.id}>
             {c.name} — {c.type} (Age: {c.age}, Power: {c.magical_power})
-            {c.name} — {c.type} ({c.Habitat?.name || "No habitat"})
+            <Link to={`/creature/${c.id}`}>
+              {c.name} — {c.type} ({c.Habitat?.name || "No habitat"})
+            </Link>
           </li>
         ))}
       </ul>
