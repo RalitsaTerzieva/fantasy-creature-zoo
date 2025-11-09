@@ -1,5 +1,5 @@
 import express from "express";
-import { getHabitats, addHabitat } from "../controllers/habitat.Controller.js";
+import { getHabitats, addHabitat } from "../controllers/habitatController.js";
 
 const router = express.Router();
 
