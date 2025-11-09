@@ -22,8 +22,6 @@ export default function CreatureProfile() {
       <p><strong>Type:</strong> {creature.type}</p>
       <p><strong>Age:</strong> {creature.age}</p>
       <p><strong>Magical Power:</strong> {creature.magical_power}</p>
-      <p><strong>Habitat:</strong> {creature.Habitat?.name || "Unknown"}</p>
-      <p><strong>Environment:</strong> {creature.Habitat?.environment || "Unknown"}</p>
     </div>
   );
 }
