@@ -2,10 +2,20 @@
 
 A full-stack app to manage and explore magical creatures and their habitats.
 
-## 🧰 Stack
-- PostgreSQL
-- Node.js + Express + Sequelize
-- React + Axios
+
+## 🧰 Tech Stack
+- **Frontend:** React, React Router DOM, Axios
+- **Backend:** Node.js, Express, Sequelize
+- **Database:** PostgreSQL
+
+---
+
+## 🚀 Features
+- View all creatures in the zoo
+- Add new magical creatures (via form)
+- View detailed profile pages for each creature
+- Manage habitats and associate creatures with them
+- PostgreSQL + Sequelize ORM integration
 
 ## 🚀 How to Run
 
