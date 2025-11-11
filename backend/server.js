@@ -5,6 +5,7 @@ import sequelize from "./config/db.js";
 import "./models/index.js"; 
 import creatureRoutes from "./routes/creatureRoutes.js";
 import habitatRoutes from "./routes/habitatRoutes.js";
+import { requestLogger } from "./middleware/loggerMiddleware.js";
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type"]
 }));
 app.use(express.json());
+app.use(requestLogger);
 
 app.use("/api/creatures", creatureRoutes);
 app.use("/api/habitat", habitatRoutes);
