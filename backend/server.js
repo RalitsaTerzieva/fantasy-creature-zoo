@@ -18,10 +18,11 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(requestLogger);
-app.use(errorHandler);
 
 app.use("/api/creatures", creatureRoutes);
 app.use("/api/habitat", habitatRoutes);
+
+app.use(errorHandler);
 
 sequelize
   .sync({ alter: true })
