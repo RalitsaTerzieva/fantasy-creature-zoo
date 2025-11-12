@@ -6,6 +6,7 @@ import "./models/index.js";
 import creatureRoutes from "./routes/creatureRoutes.js";
 import habitatRoutes from "./routes/habitatRoutes.js";
 import { requestLogger } from "./middleware/loggerMiddleware.js";
+import { errorHandler } from "./middleware/errorHandler.js";
 
 dotenv.config();
 const app = express();
@@ -17,6 +18,7 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(requestLogger);
+app.use(errorHandler);
 
 app.use("/api/creatures", creatureRoutes);
 app.use("/api/habitat", habitatRoutes);
