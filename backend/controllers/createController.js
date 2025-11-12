@@ -1,30 +1,29 @@
 import { Creature, Habitat } from "../models/index.js";
+import * as creatureService from "../services/creatureService.js";
 
 export const getCreatures = async (req, res) => {
-  const creatures = await Creature.findAll({ include: Habitat });
-  res.json(creatures);
+  try {
+    const creatures = await creatureService.getAllCreatures();
+    res.json(creatures);
+  } catch (err) {
+    next(err);
+  }
 };
 
 export const addCreature = async (req, res) => {
-    try {
-    const creature = await Creature.create(req.body);
-    res.status(201).json(creature);
+  try {
+    const newCreature = await creatureService.createCreature(req.body);
+    res.status(201).json(newCreature);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Failed to create creature" });
+    next(err);
   }
 };
 
 export const getCreatureById = async (req, res) => {
   try {
-    const { id } = req.params;
-    const creature = await Creature.findByPk(id, { include: Habitat });
-    if (!creature) {
-      return res.status(404).json({ error: "Creature not found" });
-    }
+    const creature = await creatureService.getCreatureById(req.params.id);
     res.json(creature);
   } catch (err) {
-    console.error("Failed to fetch creature:", err);
-    res.status(500).json({ error: "Failed to fetch creature" });
+    next(err);
   }
 };
