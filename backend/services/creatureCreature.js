@@ -15,7 +15,7 @@ export const getCreatureById = async (id) => {
   const creature = await Creature.findByPk(id, { include: Habitat });
   if (!creature) {
     const error = new Error("Creature not found");
-    error.status = 404; // So the controller or middleware can respond accordingly
+    error.status = 404;
     throw error;
   }
   return creature;

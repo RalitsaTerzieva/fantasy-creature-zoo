@@ -1,5 +1,4 @@
-import { Creature, Habitat } from "../models/index.js";
-import * as creatureService from "../services/creatureService.js";
+import * as creatureService from "../services/creatureCreature.js"
 
 export const getCreatures = async (req, res) => {
   try {
